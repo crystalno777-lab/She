@@ -122,7 +122,7 @@ function buildQuestSelectCard(quests) {
     const lines = quests.map((q, i) => {
         const tasks = (q.config.task_config ?? q.config.task_config_v2)?.tasks ?? {};
         const taskKey = Object.keys(tasks)[0] ?? '';
-        const icon = ICONS[taskKey] ?? '⚙️';
+        const icon = ICONS[taskKey] ?? '<a:nod:1559254935466549339>';
         const exp = Math.floor(new Date(q.config.expires_at).getTime() / 1000);
         return `**${i + 1}.** ${icon} **${q.config.messages.quest_name}**\n> *${q.config.messages.game_title}*  •  Expires <t:${exp}:R>`;
     }).join('\n\n');
