@@ -64,7 +64,7 @@ function buildLinkPrompt() {
 const c = new ContainerBuilder().setAccentColor(0xFEE75C);
 c.addTextDisplayComponents(
 new TextDisplayBuilder().setContent(
-`<:emoji_55:1559250255717859370> Token Required\n\nYou need to link your Discord token before using quest commands.\n\nClick Link Token below  a popup will appear where you can paste your token.\n\nHow to get your token:\n\n<:emoji_73:1559248968465129543> Click https://discord.com/channels/1559194966574637167/1559244684914860182 to watch the video.\n\n<:emoji_76:1559248965898080397> The text shown in the video is available here:\nhttps://discord.com/channels/1559194966574637167/1559244740959010876\n\n« <:emoji_43:1559247358838050917> This is your user token, NOT your bot token.»`,
+`# <:emoji_55:1559250255717859370> Token Required\n\nYou need to link your Discord token before using quest commands.\n\nClick **Link Token** below — a popup will appear where you can paste your token.\n\n**How to get your token:**\n\n<:emoji_73:1559248968465129543> Click https://discord.com/channels/1559194966574637167/1559244684914860182 to watch the video.\n\n<:emoji_76:1559248965898080397> The text shown in the video is available here:\nhttps://discord.com/channels/1559194966574637167/1559244740959010876\n\n> « <:emoji_43:1559247358838050917> This is your user token, **NOT** your bot token. »`,
 ),
 );
 c.addSeparatorComponents(new SeparatorBuilder().setSpacing(SeparatorSpacingSize.Small).setDivider(true));
@@ -72,7 +72,8 @@ c.addActionRowComponents(
 new ActionRowBuilder().addComponents(
 new ButtonBuilder()
 .setCustomId('link_prompt')
-.setLabel('<:emoji_55:1559250255717859370> Link Token')
+.setLabel('Link Token')
+.setEmoji('1559250255717859370')
 .setStyle(ButtonStyle.Danger),
 ),
 );
@@ -93,7 +94,7 @@ function buildExpiredTokenCard() {
 const c = new ContainerBuilder().setAccentColor(0xED4245);
 c.addTextDisplayComponents(
 new TextDisplayBuilder().setContent(
-`# <:shrug:1559239504051834952> Token Expired\nYour saved token was rejected by Discord — it has likely expired.\n\nYour token has been removed. Re-link with \`/link\` or \`${PREFIX}link\`.`,
+`# <:shrug:1559239504051834952> Token Expired\nYour saved token was rejected by Discord — it has likely expired.\n\n**Your token has been removed.** Re-link with \`/link\` or \`${PREFIX}link\`.`,
 ),
 );
 return { components: [c], flags: MessageFlags.IsComponentsV2 };
@@ -753,7 +754,7 @@ try {
         const c = new ContainerBuilder().setAccentColor(0x57F287);  
         c.addTextDisplayComponents(  
             new TextDisplayBuilder().setContent(  
-                `# <a:nod:1559254935466549339> Auto-Quest Complete!\n**${live.config.messages.quest_name}** has been completed automatically.\n${claimed > 0 ? `🎁 **${claimed}** reward(s) claimed.\n` : ''}\nUse \`${PREFIX}autoquest\` to disable.`,  
+                `# 🤖 Auto-Quest Complete!\n**${live.config.messages.quest_name}** has been completed automatically.\n${claimed > 0 ? `🎁 **${claimed}** reward(s) claimed.\n` : ''}\nUse \`${PREFIX}autoquest\` to disable.`,  
             ),  
         );  
         await dm.send({ components: [c], flags: MessageFlags.IsComponentsV2 });  
@@ -775,4 +776,4 @@ try {
     }  
 }
 
-    }
+        }
