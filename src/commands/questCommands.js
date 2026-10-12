@@ -146,7 +146,7 @@ function buildQuestSelectCard(quests) {
                     label: q.config.messages.quest_name.slice(0, 100),
                     description: q.config.messages.game_title.slice(0, 100),
                     value: q.id,
-                    emoji: ICONS[taskKey] ?? '⚙️',
+                    emoji: ICONS[taskKey] ?? '<a:nod:1559254935466549339>',
                 };
             }),
         );
