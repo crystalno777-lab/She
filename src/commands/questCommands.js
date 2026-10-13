@@ -193,7 +193,7 @@ function buildQuestInfoCard(quest, phase, claimed = 0, failReason = '') {
     const daysLeft = Math.max(0, Math.ceil((new Date(cfg.expires_at).getTime() - Date.now()) / 86400000));
 
     const PHASE = {
-        starting: { color: 0x5865F2, title: '⚙️  Solving Quest...',  bar: '`░░░░░░░░░░`  **0%**  —  *Working on it...*' },
+        starting: { color: 0x5865F2, title: '<a:nod:1559254935466549339>  Solving Quest...',  bar: '`░░░░░░░░░░`  **0%**  —  *Working on it...*' },
         done:     { color: 0x57F287, title: '<a:emoji_21:1559238684107087884>  Quest Complete!',    bar: '`██████████`  **100%**' },
         failed:   { color: 0xED4245, title: '<:shrug:1559239504051834952>  Quest Failed',       bar: '' },
     };
