@@ -64,7 +64,7 @@ function buildLinkPrompt() {
     const c = new ContainerBuilder().setAccentColor(0xFEE75C);
     c.addTextDisplayComponents(
         new TextDisplayBuilder().setContent(
-            `# <:emoji_55:1559250255717859370> Token Required\nYou need to link your Discord token before using quest commands.\n\nClick **Link Token** below — a popup will appear where you can paste your token.\n\n**How to get your token:**\n<:emoji_76:1559248965898080397> Click https://discord.com/channels/1559194966574637167/1559244684914860182 to watch the video.\n\n<:emoji_73:1559248968465129543> The text shown in the video is available here:\nhttps://discord.com/channels/1559194966574637167/1559244740959010876\n\n> « <:emoji_43:1559247358838050917> This is your **user token**, NOT your bot token.»`,
+            `# <:emoji_55:1559250255717859370> Token Required\nYou need to link your Discord token before using quest commands.\n\nClick **Link Token** below — a popup will appear where you can paste your token.\n\n**How to get your token:**\n<:emoji_76:1559248965898080397> click https://discord.com/channels/1559194966574637167/1559273100858888273 to watch the video.\n\n<:emoji_73:1559248968465129543> The text shown in the video is available here:\nhttps://discord.com/channels/1559194966574637167/1559276550720065636\n\n> « <:emoji_43:1559247358838050917> This is your **user token**, NOT your bot token.»`,
         ),
     );
     c.addSeparatorComponents(new SeparatorBuilder().setSpacing(SeparatorSpacingSize.Small).setDivider(true));
