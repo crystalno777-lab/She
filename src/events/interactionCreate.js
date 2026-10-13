@@ -12,12 +12,36 @@ const DM_ALLOWED_USERS = [
   "YOUR_DISCORD_ID_5"
 ];
 
-const DM_WARNING = `# you are not owner special <a:Xieron_stolen_emoji_1784269191:1559410504852578374>
-
-**You don’t have access to this command.**
-Run it in the server instead.
-
-<:emoji_73:1559248968465129543> <https://discord.com/channels/1559194966574637167/1559273285924028557>`;
+const DM_WARNING = {
+  embeds: [
+    {
+      color: 0x5865F2,
+      title: 'U AIN’T OWNER SPECIAL',
+      description:
+        'You don’t have access to this command.\nPlease run it in the server instead.',
+      footer: {
+        text: 'Quest Bot • Restricted DM Access'
+      }
+    }
+  ],
+  components: [
+    {
+      type: 1,
+      components: [
+        {
+          type: 2,
+          style: 5,
+          label: 'Go to the channel',
+          url: 'https://discord.com/channels/1559194966574637167/1559273285924028557',
+          emoji: {
+            id: '1559248968465129543',
+            name: 'emoji_73'
+          }
+        }
+      ]
+    }
+  ]
+};
 
 export default {
   name: 'interactionCreate',
@@ -31,9 +55,7 @@ export default {
       !interaction.guildId &&
       !DM_ALLOWED_USERS.includes(interaction.user.id)
     ) {
-      await interaction.reply({
-        content: DM_WARNING
-      }).catch(() => {});
+      await interaction.reply(DM_WARNING).catch(() => {});
       return;
     }
 
